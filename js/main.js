@@ -98,22 +98,13 @@ function openLightbox(src, alt) {
   lightboxImg.alt = alt;
   if (lightboxLabel) lightboxLabel.textContent = alt;
   lightbox.classList.add('open');
-  document.body.style.overflow = 'hidden';
 }
 function closeLightbox() {
   lightbox?.classList.remove('open');
-  document.body.style.overflow = '';
 }
-lightboxClose?.addEventListener('click', closeLightbox);
+lightboxClose?.addEventListener('click', e => { e.stopPropagation(); closeLightbox(); });
 lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
-
-// Swipe down to close on mobile
-let touchStartY = 0;
-lightbox?.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
-lightbox?.addEventListener('touchend', e => {
-  if (e.changedTouches[0].clientY - touchStartY > 60) closeLightbox();
-}, { passive: true });
 
 // Transparent tap button over every product image → opens lightbox
 document.querySelectorAll('.variant-img-wrap').forEach(wrap => {
