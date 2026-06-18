@@ -43,14 +43,13 @@
         <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>
       </svg>
     </button>
-    <button class="nav-icon" data-cart-open aria-label="Kundvagn">
+    <a class="nav-icon ig-nav-btn" href="https://ig.me/m/amorex.official" target="_blank" rel="noopener" aria-label="Beställ via Instagram">
       <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-        <line x1="3" y1="6" x2="21" y2="6"/>
-        <path d="M16 10a4 4 0 01-8 0"/>
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
       </svg>
-      <span class="cart-badge">0</span>
-    </button>
+    </a>
     <button class="hamburger" aria-label="Meny">
       <span></span><span></span><span></span>
     </button>
@@ -123,12 +122,14 @@
       <h2 class="cat-title">Hoodies</h2>
       <p class="cat-desc">Premium hoodies i ett urval av färger och med signaturbetaljerna som gör Amorex unik.</p>
       <span class="cat-price">549 KR</span>
-      <button class="cat-btn" onclick="addToCart('Amorex Classic Hoodie')">
-        Lägg i kundvagn
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
+      <a class="cat-btn ig-btn" href="https://ig.me/m/amorex.official" target="_blank" rel="noopener">
+        Beställ via Instagram
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
         </svg>
-      </button>
+      </a>
     </div>
 
     <div class="variants-row">
@@ -184,12 +185,14 @@
       <h2 class="cat-title">T-shirts</h2>
       <p class="cat-desc">Tidlösa tees i premiumkotton för vardaglig komfort. Designade att se bra ut år efter år.</p>
       <span class="cat-price">349 KR</span>
-      <button class="cat-btn" onclick="addToCart('Amorex EST. 2025 Tee')">
-        Lägg i kundvagn
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
+      <a class="cat-btn ig-btn" href="https://ig.me/m/amorex.official" target="_blank" rel="noopener">
+        Beställ via Instagram
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
         </svg>
-      </button>
+      </a>
     </div>
 
     <div class="variants-row">
@@ -245,12 +248,14 @@
       <h2 class="cat-title">Kepsar</h2>
       <p class="cat-desc">Finishing touches för varje look. Strukturerad baseball cap med justerbar passform och signaturloggan i guld.</p>
       <span class="cat-price">389 KR</span>
-      <button class="cat-btn" onclick="addToCart('Amorex Baseball Cap')">
-        Lägg i kundvagn
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
+      <a class="cat-btn ig-btn" href="https://ig.me/m/amorex.official" target="_blank" rel="noopener">
+        Beställ via Instagram
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
         </svg>
-      </button>
+      </a>
     </div>
 
     <div class="variants-row">
@@ -505,32 +510,6 @@
 </footer>
 
 
-<!-- ═══════════ CART DRAWER ═══════════ -->
-<div class="cart-overlay" id="cart-overlay"></div>
-<aside class="cart-drawer" id="cart-drawer" role="dialog" aria-label="Kundvagn">
-  <div class="cart-head">
-    <h2 class="cart-head-title">Kundvagn</h2>
-    <button class="cart-x" data-cart-close aria-label="Stäng">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-      </svg>
-    </button>
-  </div>
-  <div class="cart-body" id="cart-body">
-    <svg class="cart-empty-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <path d="M16 10a4 4 0 01-8 0"/>
-    </svg>
-    <p class="cart-empty-msg">Din kundvagn är tom</p>
-    <p class="cart-empty-sub">Lägg till produkter för att börja handla</p>
-  </div>
-  <div class="cart-foot">
-    <a href="#shop" class="btn btn-dark" style="width:100%;justify-content:center;" onclick="closeCart()">
-      Börja shoppa
-    </a>
-  </div>
-</aside>
 
 <script src="js/main.js"></script>
 </body>

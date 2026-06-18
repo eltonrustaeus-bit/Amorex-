@@ -118,19 +118,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   position: relative;
 }
 .nav-icon:hover { color: var(--gold); }
-.cart-badge {
-  position: absolute;
-  top: -7px; right: -7px;
-  width: 15px; height: 15px;
-  background: var(--gold);
-  color: var(--white);
-  border-radius: 50%;
-  font-size: 8px;
-  font-weight: 700;
-  display: none;
-  align-items: center;
-  justify-content: center;
-}
 
 .hamburger {
   display: none;
@@ -401,6 +388,25 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--ink);
 }
 
+.ig-btn {
+  background: var(--ink);
+  color: var(--white);
+  border-color: var(--ink);
+  text-decoration: none;
+}
+.ig-btn:hover {
+  background: #e1306c;
+  border-color: #e1306c;
+  color: var(--white);
+}
+
+.ig-nav-btn {
+  color: var(--ink2);
+  transition: color .25s;
+  display: flex;
+}
+.ig-nav-btn:hover { color: #e1306c; }
+
 /* ─── VARIANT GRID (5 per row) ──────────────────────── */
 .variants-row {
   display: grid;
@@ -419,7 +425,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .variant-img-wrap {
   background: var(--cream);
   border: 1px solid var(--light-border);
-  aspect-ratio: 1/1;
+  aspect-ratio: 3/4;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -838,74 +844,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .footer-legal a { font-size: 11px; font-weight: 300; color: rgba(255,255,255,.3); transition: color .3s; }
 .footer-legal a:hover { color: var(--gold); }
 
-/* ─── CART DRAWER ───────────────────────────────────── */
-.cart-overlay {
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,.5);
-  z-index: 2000;
-  opacity: 0; pointer-events: none;
-  transition: opacity .3s;
-  backdrop-filter: blur(3px);
-}
-.cart-overlay.open { opacity: 1; pointer-events: all; }
-
-.cart-drawer {
-  position: fixed;
-  top: 0; right: -430px;
-  width: 420px; height: 100%;
-  background: var(--white);
-  z-index: 2001;
-  transition: right .4s cubic-bezier(.4,0,.2,1);
-  display: flex; flex-direction: column;
-  box-shadow: -4px 0 40px rgba(0,0,0,.15);
-}
-.cart-drawer.open { right: 0; }
-
-.cart-head {
-  padding: 26px 28px;
-  border-bottom: 1px solid var(--light-border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.cart-head-title {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 22px;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: var(--ink);
-}
-.cart-x {
-  color: var(--muted);
-  font-size: 18px;
-  transition: color .25s;
-  cursor: pointer;
-}
-.cart-x:hover { color: var(--ink); }
-
-.cart-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  padding: 40px;
-  color: var(--muted);
-}
-.cart-empty-icon { color: var(--light-border); }
-.cart-empty-msg {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 20px;
-  color: var(--ink2);
-}
-.cart-empty-sub { font-size: 11px; letter-spacing: .5px; }
-
-.cart-foot {
-  padding: 24px 28px;
-  border-top: 1px solid var(--light-border);
-}
-
 /* ─── SCROLL REVEAL ─────────────────────────────────── */
 .reveal {
   opacity: 0;
@@ -960,7 +898,6 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .manifesto { padding: 72px 24px; }
   .newsletter { padding: 72px 24px; }
   .values { padding: 60px 20px; }
-  .cart-drawer { width: 100%; right: -100%; }
 }
 
 @media (max-width: 500px) {
