@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amorex — Timeless Style. Modern Luxury.</title>
+  <meta name="description" content="Amorex är ett svenskt klädmärke som skapar tidlösa plagg av hög kvalitet. Premium hoodies, t-shirts och kepsar från 349 KR." />
+  <meta name="theme-color" content="#080808" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+<body>
+
+<!-- ─── ANNOUNCEMENT BAR ─────────────────────────────── -->
+<div class="announcement-bar">
+  Fri frakt på alla beställningar över 999 KR &nbsp;·&nbsp; Ny kollektion tillgänglig nu
+</div>
+
+<!-- ─── NAVIGATION ───────────────────────────────────── -->
+<nav class="nav">
+  <ul class="nav-links">
+    <li><a href="#home">Hem</a></li>
+    <li><a href="#shop">Shop</a></li>
+    <li><a href="#collections">Kollektioner</a></li>
+    <li><a href="#story">Om oss</a></li>
+  </ul>
+
+  <a href="#home" class="nav-logo">
+    <svg class="nav-logo-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g>
+        <!-- X strokes -->
+        <line x1="16" y1="16" x2="64" y2="64" stroke="#c9a96e" stroke-width="3.5" stroke-linecap="round"/>
+        <line x1="64" y1="16" x2="16" y2="64" stroke="#c9a96e" stroke-width="3.5" stroke-linecap="round"/>
+        <!-- A shape overlay -->
+        <polyline points="28,60 40,20 52,60" fill="none" stroke="#c9a96e" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="33" y1="46" x2="47" y2="46" stroke="#c9a96e" stroke-width="2.5" stroke-linecap="round"/>
+      </g>
+    </svg>
+    <span class="nav-logo-text">Amorex</span>
+  </a>
+
+  <div class="nav-actions">
+    <button class="nav-action-btn" aria-label="Sök">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/>
+      </svg>
+    </button>
+    <button class="nav-action-btn" data-cart-open aria-label="Kundvagn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <span class="cart-count" style="display:none">0</span>
+    </button>
+    <button class="hamburger" aria-label="Meny">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── MOBILE MENU ──────────────────────────────────── -->
+<div class="mobile-menu">
+  <button class="mobile-menu-close" aria-label="Stäng">✕</button>
+  <a href="#home">Hem</a>
+  <a href="#shop">Shop</a>
+  <a href="#collections">Kollektioner</a>
+  <a href="#story">Om oss</a>
+  <a href="#contact">Kontakt</a>
+</div>
+
+<!-- ─── HERO ─────────────────────────────────────────── -->
+<section id="home" class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Kollektion 2025</span>
+
+    <svg class="hero-logo-svg" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="60" cy="60" r="58" fill="#0f0f0f" stroke="#c9a96e" stroke-width="1"/>
+      <!-- X strokes -->
+      <line x1="28" y1="28" x2="92" y2="92" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+      <line x1="92" y1="28" x2="28" y2="92" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+      <!-- A shape -->
+      <polyline points="40,86 60,32 80,86" fill="none" stroke="#c9a96e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <line x1="48" y1="68" x2="72" y2="68" stroke="#c9a96e" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+
+    <h1 class="hero-brand">Amorex</h1>
+    <p class="hero-tagline">Timeless Style. Modern Luxury.</p>
+    <div class="hero-divider"></div>
+    <p class="hero-desc">
+      Premium kläder skapta för dem som värdesätter kvalitet, stil och tidlöshet — utan att betala överpris.
+    </p>
+    <div class="hero-cta">
+      <a href="#shop" class="btn btn-primary">Shoppa nu</a>
+      <a href="#story" class="btn btn-outline">Vår historia</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ─── MARQUEE STRIP ────────────────────────────────── -->
+<div class="strip">
+  <div class="strip-track">
+    <div class="strip-item">Fri frakt över 999 KR <span class="strip-dot"></span></div>
+    <div class="strip-item">Premium kvalitet <span class="strip-dot"></span></div>
+    <div class="strip-item">Ny kollektion 2025 <span class="strip-dot"></span></div>
+    <div class="strip-item">Tidlös design <span class="strip-dot"></span></div>
+    <div class="strip-item">Amorex Official <span class="strip-dot"></span></div>
+    <!-- duplicate for seamless loop -->
+    <div class="strip-item">Fri frakt över 999 KR <span class="strip-dot"></span></div>
+    <div class="strip-item">Premium kvalitet <span class="strip-dot"></span></div>
+    <div class="strip-item">Ny kollektion 2025 <span class="strip-dot"></span></div>
+    <div class="strip-item">Tidlös design <span class="strip-dot"></span></div>
+    <div class="strip-item">Amorex Official <span class="strip-dot"></span></div>
+  </div>
+</div>
+
+<!-- ─── FEATURED ─────────────────────────────────────── -->
+<div class="featured">
+  <div class="featured-inner">
+    <div class="featured-visual reveal">
+      <div class="featured-img-wrap">
+        <!-- Product display: stacked clothing -->
+        <svg viewBox="0 0 480 600" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;background:#141414;">
+          <!-- Hoodie shape -->
+          <path d="M140 180 Q120 160 80 155 L60 200 Q100 210 110 240 L110 480 L370 480 L370 240 Q380 210 420 200 L400 155 Q360 160 340 180 Q310 150 280 145 L280 165 Q270 200 240 200 Q210 200 200 165 L200 145 Q170 150 140 180Z" fill="#1a1f2e" stroke="#2a3050" stroke-width="1.5"/>
+          <!-- Hood -->
+          <path d="M200 145 Q240 120 280 145 L280 165 Q270 200 240 200 Q210 200 200 165Z" fill="#151a28"/>
+          <!-- Kangaroo pocket -->
+          <rect x="180" y="330" width="120" height="70" rx="4" fill="#151a28" stroke="#2a3050" stroke-width="1"/>
+          <!-- AMOREX text on chest -->
+          <text x="240" y="300" text-anchor="middle" font-family="Montserrat,sans-serif" font-size="14" font-weight="600" letter-spacing="4" fill="#c9a96e">AMOREX</text>
+          <!-- Front zipper line -->
+          <!-- Drawstrings -->
+          <line x1="225" y1="200" x2="215" y2="260" stroke="#c9a96e" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4"/>
+          <line x1="255" y1="200" x2="265" y2="260" stroke="#c9a96e" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4"/>
+          <!-- Shoulder seams -->
+          <line x1="140" y1="185" x2="190" y2="210" stroke="#2a3050" stroke-width="1"/>
+          <line x1="340" y1="185" x2="290" y2="210" stroke="#2a3050" stroke-width="1"/>
+        </svg>
+
+        <div class="featured-badge">
+          <span class="featured-badge-label">The Amorex Collection</span>
+          <span class="featured-badge-price">549 KR</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="featured-content reveal reveal-delay-2">
+      <p class="section-label">Utvalda produkter</p>
+      <h2 class="section-title">The Amorex<br><em style="color:var(--gold);font-style:italic;">Collection</em></h2>
+      <p class="section-desc">
+        Premium kläder designade för vardagligt självförtroende. Tidlösa plagg som håller över tid — både i kvalitet och design.
+      </p>
+
+      <div class="featured-features">
+        <div class="featured-feature">
+          <div class="feature-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <span class="feature-title">Premiumkvalitet</span>
+            <span class="feature-desc">Tillverkad av noggrant utvalt material för maximal hållbarhet och komfort</span>
+          </div>
+        </div>
+        <div class="featured-feature">
+          <div class="feature-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <span class="feature-title">Tidlös design</span>
+            <span class="feature-desc">Kläder som aldrig går ur mode — moderna idag och om flera år</span>
+          </div>
+        </div>
+        <div class="featured-feature">
+          <div class="feature-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <span class="feature-title">Tillgängliga priser</span>
+            <span class="feature-desc">Hög kvalitet utan att behöva betala överpris</span>
+          </div>
+        </div>
+      </div>
+
+      <a href="#shop" class="btn btn-primary" style="align-self:flex-start;">
+        Utforska kollektionen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SHOP / PRODUCTS ──────────────────────────────── -->
+<section id="shop" style="background:var(--black);">
+  <div class="products">
+    <div class="products-header reveal">
+      <div>
+        <p class="section-label">Vår kollektion</p>
+        <h2 class="section-title">Shop</h2>
+      </div>
+      <div class="products-header-right">
+        <button class="category-tab active" data-filter="all">Allt</button>
+        <button class="category-tab" data-filter="hoodie">Hoodies</button>
+        <button class="category-tab" data-filter="tshirt">T-shirts</button>
+        <button class="category-tab" data-filter="cap">Kepsar</button>
+      </div>
+    </div>
+
+    <div class="products-grid">
+      <!-- HOODIE NAVY -->
+      <div class="product-card reveal" data-category="hoodie">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" stroke="#2a3050" stroke-width="2">
+              <path d="M30 35 Q20 30 12 28 L8 42 Q20 45 22 55 L22 90 L78 90 L78 55 Q80 45 92 42 L88 28 Q80 30 70 35 Q62 25 50 24 Q38 25 30 35Z" fill="#1a1f2e"/>
+              <text x="50" y="68" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#c9a96e" letter-spacing="1">AMOREX</text>
+            </svg>
+          </div>
+          <span class="product-tag">Bestseller</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Hoodie</p>
+          <h3 class="product-name">Amorex Classic Hoodie</h3>
+          <div class="product-colors">
+            <span class="color-dot" style="background:#1a1f2e;" title="Navy"></span>
+            <span class="color-dot" style="background:#111111;" title="Black"></span>
+            <span class="color-dot" style="background:#f5f5f0;" title="White"></span>
+            <span class="color-dot" style="background:#b8d4e8;" title="Baby Blue"></span>
+            <span class="color-dot" style="background:#e8e0d0;" title="Light Beige"></span>
+          </div>
+          <div class="product-bottom">
+            <span class="product-price">549 KR</span>
+            <button class="product-add" aria-label="Lägg i kundvagn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOODIE BLACK -->
+      <div class="product-card reveal reveal-delay-1" data-category="hoodie">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" stroke="#333" stroke-width="2">
+              <path d="M30 35 Q20 30 12 28 L8 42 Q20 45 22 55 L22 90 L78 90 L78 55 Q80 45 92 42 L88 28 Q80 30 70 35 Q62 25 50 24 Q38 25 30 35Z" fill="#1a1a1a"/>
+              <text x="50" y="68" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#c9a96e" letter-spacing="1">AMOREX</text>
+            </svg>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Hoodie</p>
+          <h3 class="product-name">Amorex Classic Hoodie</h3>
+          <div class="product-colors">
+            <span class="color-dot" style="background:#111111;box-shadow:0 0 0 2px var(--gold),0 0 0 4px rgba(201,169,110,0.2);" title="Black"></span>
+            <span class="color-dot" style="background:#1a1f2e;" title="Navy"></span>
+            <span class="color-dot" style="background:#f5f5f0;" title="White"></span>
+            <span class="color-dot" style="background:#b8d4e8;" title="Baby Blue"></span>
+            <span class="color-dot" style="background:#e8e0d0;" title="Light Beige"></span>
+          </div>
+          <div class="product-bottom">
+            <span class="product-price">549 KR</span>
+            <button class="product-add" aria-label="Lägg i kundvagn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- T-SHIRT -->
+      <div class="product-card reveal reveal-delay-2" data-category="tshirt">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" stroke="#2a3050" stroke-width="2">
+              <path d="M35 22 L20 32 L8 28 L5 42 L20 44 L20 90 L80 90 L80 44 L95 42 L92 28 L80 32 L65 22 Q60 18 50 18 Q40 18 35 22Z" fill="#1a1f2e"/>
+              <text x="50" y="62" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#c9a96e" letter-spacing="1">AMOREX</text>
+              <text x="50" y="70" text-anchor="middle" font-family="sans-serif" font-size="4" fill="#c9a96e" letter-spacing="1">EST 2025</text>
+            </svg>
+          </div>
+          <span class="product-tag">Ny</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">T-shirt</p>
+          <h3 class="product-name">Amorex EST. 2025 Tee</h3>
+          <div class="product-colors">
+            <span class="color-dot" style="background:#1a1f2e;" title="Navy"></span>
+            <span class="color-dot" style="background:#111111;" title="Black"></span>
+            <span class="color-dot" style="background:#f5f5f0;" title="White"></span>
+            <span class="color-dot" style="background:#b8d4e8;" title="Baby Blue"></span>
+            <span class="color-dot" style="background:#e8e0d0;" title="Light Beige"></span>
+          </div>
+          <div class="product-bottom">
+            <span class="product-price">349 KR</span>
+            <button class="product-add" aria-label="Lägg i kundvagn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAP -->
+      <div class="product-card reveal reveal-delay-3" data-category="cap">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">
+            <svg viewBox="0 0 100 80" fill="none" stroke="#2a3050" stroke-width="2">
+              <!-- cap shape -->
+              <path d="M15 50 Q15 25 50 20 Q85 25 85 50 L80 55 L20 55Z" fill="#1a1f2e"/>
+              <!-- brim -->
+              <path d="M20 55 Q15 58 10 62 Q20 66 50 65 Q55 55 80 55" fill="#141822" stroke="#2a3050"/>
+              <!-- mesh back -->
+              <path d="M50 20 Q70 22 85 50 L80 55 Q75 35 50 32Z" fill="#141a26"/>
+              <!-- A/X emblem -->
+              <text x="32" y="46" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#c9a96e">✕</text>
+              <text x="10" y="76" text-anchor="start" font-family="sans-serif" font-size="4" fill="#c9a96e" letter-spacing="1">AMOREX</text>
+            </svg>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Keps</p>
+          <h3 class="product-name">Amorex Trucker Cap</h3>
+          <div class="product-colors">
+            <span class="color-dot" style="background:linear-gradient(135deg,#f5f5f0 50%,#1a1f2e 50%);" title="White/Navy"></span>
+            <span class="color-dot" style="background:linear-gradient(135deg,#f5f5f0 50%,#111 50%);" title="White/Black"></span>
+            <span class="color-dot" style="background:linear-gradient(135deg,#f5f5f0 50%,#ccc 50%);" title="White/Grey"></span>
+            <span class="color-dot" style="background:linear-gradient(135deg,#e8e0d0 50%,#b8d4e8 50%);" title="Beige/Blue"></span>
+            <span class="color-dot" style="background:#e8e0d0;" title="Full Beige"></span>
+          </div>
+          <div class="product-bottom">
+            <span class="product-price">389 KR</span>
+            <button class="product-add" aria-label="Lägg i kundvagn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- T-SHIRT WHITE -->
+      <div class="product-card reveal" data-category="tshirt">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" stroke="#ddd" stroke-width="1.5">
+              <path d="M35 22 L20 32 L8 28 L5 42 L20 44 L20 90 L80 90 L80 44 L95 42 L92 28 L80 32 L65 22 Q60 18 50 18 Q40 18 35 22Z" fill="#f0ede6"/>
+              <text x="50" y="62" text-anchor="middle" font-family="sans-serif" font-size="5" fill="#1a1a1a" letter-spacing="1">AMOREX</text>
+              <text x="50" y="70" text-anchor="middle" font-family="sans-serif" font-size="4" fill="#1a1a1a" letter-spacing="1">EST 2025</text>
+            </svg>
+          </div>
+        </div>
+        <div class="product-info">
+          <p class="product-category">T-shirt</p>
+          <h3 class="product-name">Amorex EST. 2025 Tee</h3>
+          <div class="product-colors">
+            <span class="color-dot" style="background:#f5f5f0;box-shadow:0 0 0 2px var(--gold),0 0 0 4px rgba(201,169,110,0.2);" title="White"></span>
+            <span class="color-dot" style="background:#111111;" title="Black"></span>
+            <span class="color-dot" style="background:#1a1f2e;" title="Navy"></span>
+            <span class="color-dot" style="background:#b8d4e8;" title="Baby Blue"></span>
+            <span class="color-dot" style="background:#e8e0d0;" title="Light Beige"></span>
+          </div>
+          <div class="product-bottom">
+            <span class="product-price">349 KR</span>
+            <button class="product-add" aria-label="Lägg i kundvagn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOODIE BEIGE -->
+      <div class="product-card reveal reveal-delay-1" data-category="hoodie">
+        <div class="product-img-wrap">
+          <div class="product-img-placeholder">
+            <svg viewBox="0 0 100 100" fill="none" stroke="#ccc" stroke-width="1.5">
+              <path d="M30 35 Q20 30 12 28 L8 42 Q20 45 22 55 L22 90 L78 90 L78 55 Q80 45 92 42 L88 28 Q80 30 70 35 Q62 25 50 24 Q38 25 30 35Z" fill="#e8e0d0"/>
+              <text x="50" y="68" text-anchor="middle" font-family="sans-serif" font-size="6" fill="#8a7a5a" letter-spacing="1">AMOREX</text>
+            </svg>
+          </div>
+          <span class="product-tag">Populär</span>
+        </div>
+        <div class="product-info">
+          <p class="product-category">Hoodie</p>
+          <h3 class="product-name">Amorex Classic Hoodie</h3>
+          <div class="product-colors">
+            <span class="color-dot" style="background:#e8e0d0;box-shadow:0 0 0 2px var(--gold),0 0 0 4px rgba(201,169,110,0.2);" title="Beige"></span>
+            <span class="color-dot" style="background:#b8d4e8;" title="Baby Blue"></span>
+            <span class="color-dot" style="background:#f5f5f0;" title="White"></span>
+            <span class="color-dot" style="background:#111111;" title="Black"></span>
+            <span class="color-dot" style="background:#1a1f2e;" title="Navy"></span>
+          </div>
+          <div class="product-bottom">
+            <span class="product-price">549 KR</span>
+            <button class="product-add" aria-label="Lägg i kundvagn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── BRAND STORY ──────────────────────────────────── -->
+<div id="story" class="brand-story">
+  <div class="story-visual">
+    <div class="story-visual-overlay"></div>
+    <div class="story-visual-content">
+      <svg class="story-logo-large" viewBox="0 0 120 120" fill="none">
+        <circle cx="60" cy="60" r="58" fill="#0f0f0f" stroke="#c9a96e" stroke-width="1"/>
+        <line x1="28" y1="28" x2="92" y2="92" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+        <line x1="92" y1="28" x2="28" y2="92" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+        <polyline points="40,86 60,32 80,86" fill="none" stroke="#c9a96e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="48" y1="68" x2="72" y2="68" stroke="#c9a96e" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <p class="story-quote">"Det här är bara början"</p>
+    </div>
+  </div>
+
+  <div class="story-content reveal">
+    <p class="section-label">Vår historia</p>
+    <h2 class="section-title">Made for<br><em style="color:var(--gold);font-style:italic;">every day.</em></h2>
+
+    <p class="story-body">
+      Vi är <strong>Isak Sörensen</strong> och <strong>Carmen Ortiz Camacho</strong>, grundarna bakom Amorex. Vi startade detta klädmärke eftersom vi tycker att många kläd&shy;märken idag har blivit onödigt dyra.
+    </p>
+    <p class="story-body">
+      Vi tror att alla ska kunna bära stilrena kläder av hög kvalitet utan att behöva betala överpris. Vår vision är enkel — att skapa <strong>tidlösa plagg</strong> som håller över tid, både i kvalitet och design.
+    </p>
+    <p class="story-body">
+      Amorex handlar inte om snabba trender. Det handlar om <strong>stil, kvalitet och tillgänglighet.</strong>
+    </p>
+
+    <div class="story-stats">
+      <div class="stat">
+        <span class="stat-number">2025</span>
+        <span class="stat-label">Grundat</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">5+</span>
+        <span class="stat-label">Färgval</span>
+      </div>
+      <div class="stat">
+        <span class="stat-number">3</span>
+        <span class="stat-label">Kategorier</span>
+      </div>
+    </div>
+
+    <a href="#shop" class="btn btn-outline" style="align-self:flex-start;">
+      Shoppa kollektionen
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+</div>
+
+<!-- ─── VALUES ───────────────────────────────────────── -->
+<div class="values">
+  <div class="values-inner">
+    <div class="values-header reveal">
+      <p class="section-label">Varför Amorex</p>
+      <h2 class="section-title">Vi tror på<br><em style="color:var(--gold);font-style:italic;">mer</em></h2>
+      <p class="section-desc" style="margin-top:16px;">
+        Fyra kärnvärden driver allt vi gör — från design till leverans.
+      </p>
+    </div>
+
+    <div class="values-grid">
+      <div class="value-item reveal">
+        <div class="value-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          </svg>
+        </div>
+        <h3 class="value-title">Kvalitet</h3>
+        <p class="value-desc">Vi kompromissar aldrig med materialet. Varje plagg väljs noggrant för att leverera maximal komfort och hållbarhet.</p>
+      </div>
+      <div class="value-item reveal reveal-delay-1">
+        <div class="value-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+        </div>
+        <h3 class="value-title">Tidlöshet</h3>
+        <p class="value-desc">Design som överskrider säsonger och trender. Plagg du fortfarande älskar om tio år.</p>
+      </div>
+      <div class="value-item reveal reveal-delay-2">
+        <div class="value-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="12" cy="12" r="10"/>
+            <path d="M12 8v4l3 3"/>
+          </svg>
+        </div>
+        <h3 class="value-title">Tillgänglighet</h3>
+        <p class="value-desc">Premium behöver inte kosta en förmögenhet. Vi håller priserna rimliga — alltid.</p>
+      </div>
+      <div class="value-item reveal reveal-delay-3">
+        <div class="value-icon">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
+        </div>
+        <h3 class="value-title">Passion</h3>
+        <p class="value-desc">Varje detalj skapas med kärlek och engagemang. Amorex är mer än ett märke — det är en rörelse.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── COLLECTIONS ──────────────────────────────────── -->
+<section id="collections" class="collections">
+  <div class="collections-inner">
+    <div class="collections-header reveal">
+      <p class="section-label">Kategorier</p>
+      <h2 class="section-title">Utforska<br><em style="color:var(--gold);font-style:italic;">kollektionerna</em></h2>
+    </div>
+
+    <div class="collections-grid">
+      <!-- HOODIES - Large card -->
+      <div class="collection-card reveal">
+        <div class="collection-img">
+          <div class="collection-img-placeholder" style="min-height:600px;background:linear-gradient(135deg,#111827 0%,#1a1f2e 100%);display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 200 240" fill="none" style="width:65%;opacity:0.9">
+              <path d="M60 70 Q40 60 22 56 L15 85 Q42 90 45 115 L45 230 L155 230 L155 115 Q158 90 185 85 L178 56 Q160 60 140 70 Q124 50 100 48 Q76 50 60 70Z" fill="#1a1f2e" stroke="#2a3050" stroke-width="1.5"/>
+              <rect x="68" y="155" width="64" height="36" rx="4" fill="#151a28" stroke="#2a3050"/>
+              <text x="100" y="135" text-anchor="middle" font-family="Georgia,serif" font-size="12" fill="#c9a96e" letter-spacing="3">AMOREX</text>
+              <line x1="90" y1="48" x2="80" y2="75" stroke="#c9a96e" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+              <line x1="110" y1="48" x2="120" y2="75" stroke="#c9a96e" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+            </svg>
+          </div>
+          <div class="collection-overlay"></div>
+          <div class="collection-info">
+            <p class="collection-cat">Premium</p>
+            <h3 class="collection-name">Hoodies</h3>
+            <p class="collection-price">Från 549 KR</p>
+            <a href="#shop" class="collection-cta">
+              Shop nu
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- T-SHIRTS -->
+      <div class="collection-card reveal reveal-delay-1">
+        <div class="collection-img">
+          <div class="collection-img-placeholder" style="background:linear-gradient(135deg,#0f1117 0%,#1c1414 100%);display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 180 200" fill="none" style="width:65%;opacity:0.9">
+              <path d="M66 44 L36 64 L16 56 L10 85 L40 89 L40 185 L140 185 L140 89 L170 85 L164 56 L144 64 L114 44 Q100 36 90 36 Q80 36 66 44Z" fill="#0f0f0f" stroke="#222" stroke-width="1.5"/>
+              <text x="90" y="128" text-anchor="middle" font-family="Georgia,serif" font-size="11" fill="#c9a96e" letter-spacing="3">AMOREX</text>
+              <text x="90" y="143" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#c9a96e" letter-spacing="2" opacity="0.7">EST 2025</text>
+            </svg>
+          </div>
+          <div class="collection-overlay"></div>
+          <div class="collection-info">
+            <p class="collection-cat">Klassik</p>
+            <h3 class="collection-name">T-shirts</h3>
+            <p class="collection-price">Från 349 KR</p>
+            <a href="#shop" class="collection-cta">
+              Shop nu
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CAPS -->
+      <div class="collection-card reveal reveal-delay-2">
+        <div class="collection-img">
+          <div class="collection-img-placeholder" style="background:linear-gradient(135deg,#16120a 0%,#1f1a10 100%);display:flex;align-items:center;justify-content:center;">
+            <svg viewBox="0 0 180 140" fill="none" style="width:75%;opacity:0.9">
+              <path d="M25 90 Q25 40 90 30 Q155 40 155 90 L148 100 L32 100Z" fill="#e8e0d0"/>
+              <path d="M32 100 Q22 108 14 116 Q50 122 90 120 Q100 100 148 100" fill="#d4cabb" stroke="#ccc"/>
+              <path d="M90 30 Q130 35 155 90 L148 100 Q140 60 90 55Z" fill="#c8bfb0"/>
+              <text x="60" y="80" text-anchor="middle" font-family="sans-serif" font-size="18" fill="#c9a96e">✕</text>
+              <text x="90" y="132" text-anchor="middle" font-family="Georgia,serif" font-size="8" fill="#c9a96e" letter-spacing="2">AMOREX</text>
+            </svg>
+          </div>
+          <div class="collection-overlay"></div>
+          <div class="collection-info">
+            <p class="collection-cat">Accessoar</p>
+            <h3 class="collection-name">Kepsar</h3>
+            <p class="collection-price">Från 389 KR</p>
+            <a href="#shop" class="collection-cta">
+              Shop nu
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MANIFESTO ────────────────────────────────────── -->
+<div class="manifesto">
+  <div class="manifesto-inner reveal">
+    <p class="manifesto-quote">
+      "Kläder som känns moderna idag, men som fortfarande kommer att se bra ut om flera år."
+    </p>
+    <p class="manifesto-attr">— Amorex, grundat 2025</p>
+  </div>
+</div>
+
+<!-- ─── INSTAGRAM ────────────────────────────────────── -->
+<section class="instagram">
+  <div class="instagram-inner">
+    <div class="instagram-header reveal">
+      <p class="section-label">Följ oss</p>
+      <h2 class="section-title">Instagram</h2>
+      <a href="https://instagram.com/amorex.official" target="_blank" rel="noopener" class="instagram-handle">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        @amorex.official
+      </a>
+    </div>
+
+    <div class="instagram-grid">
+      <!-- Placeholder grid items with different "post" visuals -->
+      <div class="instagram-item reveal">
+        <svg viewBox="0 0 200 200" fill="none" style="width:100%;height:100%;">
+          <rect width="200" height="200" fill="#0d0d0d"/>
+          <circle cx="100" cy="100" r="60" fill="#1a1f2e" stroke="#2a3050" stroke-width="1"/>
+          <line x1="68" y1="68" x2="132" y2="132" stroke="#c9a96e" stroke-width="3" stroke-linecap="round"/>
+          <line x1="132" y1="68" x2="68" y2="132" stroke="#c9a96e" stroke-width="3" stroke-linecap="round"/>
+          <polyline points="80,125 100,75 120,125" fill="none" stroke="#c9a96e" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="88" y1="110" x2="112" y2="110" stroke="#c9a96e" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="instagram-item reveal reveal-delay-1">
+        <svg viewBox="0 0 200 200" fill="none" style="width:100%;height:100%;">
+          <rect width="200" height="200" fill="#0a0808"/>
+          <path d="M50 70 Q35 60 22 58 L18 80 Q36 83 38 100 L38 165 L162 165 L162 100 Q164 83 182 80 L178 58 Q165 60 150 70 Q136 55 100 53 Q64 55 50 70Z" fill="#111" stroke="#222" stroke-width="1"/>
+          <text x="100" y="130" text-anchor="middle" font-family="Georgia,serif" font-size="14" fill="#c9a96e" letter-spacing="4">AMOREX</text>
+        </svg>
+      </div>
+      <div class="instagram-item reveal reveal-delay-2">
+        <svg viewBox="0 0 200 200" fill="none" style="width:100%;height:100%;">
+          <rect width="200" height="200" fill="#0a0c0f"/>
+          <text x="100" y="90" text-anchor="middle" font-family="Georgia,serif" font-size="36" fill="#c9a96e" letter-spacing="6">A</text>
+          <text x="100" y="130" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#555" letter-spacing="4">MOREX</text>
+          <line x1="60" y1="148" x2="140" y2="148" stroke="#2a2a2a" stroke-width="1"/>
+          <text x="100" y="162" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#444" letter-spacing="2">EST 2025</text>
+        </svg>
+      </div>
+      <div class="instagram-item reveal reveal-delay-3">
+        <svg viewBox="0 0 200 200" fill="none" style="width:100%;height:100%;">
+          <rect width="200" height="200" fill="#f0ede6"/>
+          <path d="M66 52 L40 68 L22 62 L16 88 L48 93 L48 168 L152 168 L152 93 L184 88 L178 62 L160 68 L134 52 Q114 42 100 42 Q86 42 66 52Z" fill="#e0dbd4" stroke="#ccc" stroke-width="1"/>
+          <text x="100" y="128" text-anchor="middle" font-family="Georgia,serif" font-size="10" fill="#8a7a5a" letter-spacing="3">AMOREX</text>
+          <text x="100" y="142" text-anchor="middle" font-family="sans-serif" font-size="7" fill="#8a7a5a" letter-spacing="2">EST 2025</text>
+        </svg>
+      </div>
+      <div class="instagram-item reveal">
+        <svg viewBox="0 0 200 200" fill="none" style="width:100%;height:100%;">
+          <rect width="200" height="200" fill="#060606"/>
+          <rect x="40" y="40" width="120" height="120" rx="4" fill="#111" stroke="#1f1f1f"/>
+          <text x="100" y="112" text-anchor="middle" font-family="Georgia,serif" font-size="44" font-weight="300" fill="#c9a96e" opacity="0.8">✕</text>
+          <text x="100" y="134" text-anchor="middle" font-family="sans-serif" font-size="8" fill="#555" letter-spacing="4">AMOREX</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NEWSLETTER ────────────────────────────────────── -->
+<section id="contact" class="newsletter">
+  <div class="newsletter-inner">
+    <p class="section-label reveal">Håll dig uppdaterad</p>
+    <h2 class="section-title reveal">Nyhetsbrev</h2>
+    <p class="section-desc reveal" style="text-align:center;max-width:400px;">
+      Var först med att veta om nya releaser, exklusiva erbjudanden och bakom kulisserna från Amorex.
+    </p>
+    <form class="newsletter-form reveal" onsubmit="return false;">
+      <input type="email" class="newsletter-input" placeholder="Din e-postadress" />
+      <button type="submit" class="newsletter-btn">Prenumerera</button>
+    </form>
+    <p class="newsletter-note reveal">Inga spam. Avsluta när som helst.</p>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────── -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg width="50" height="50" viewBox="0 0 120 120" fill="none">
+            <circle cx="60" cy="60" r="58" fill="#0f0f0f" stroke="#c9a96e" stroke-width="1"/>
+            <line x1="28" y1="28" x2="92" y2="92" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+            <line x1="92" y1="28" x2="28" y2="92" stroke="#c9a96e" stroke-width="4" stroke-linecap="round"/>
+            <polyline points="40,86 60,32 80,86" fill="none" stroke="#c9a96e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <line x1="48" y1="68" x2="72" y2="68" stroke="#c9a96e" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <span class="footer-logo-text">Amorex</span>
+          <span class="footer-tagline">Timeless Style. Modern Luxury.</span>
+        </div>
+        <p class="footer-desc">
+          Ett svenskt klädmärke grundat av Isak Sörensen och Carmen Ortiz Camacho. Vi skapar tidlösa plagg för dem som värdesätter kvalitet utan överpris.
+        </p>
+        <div class="footer-social">
+          <a href="https://instagram.com/amorex.official" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+            </svg>
+          </a>
+          <a href="https://tiktok.com/@amorex.official_" target="_blank" rel="noopener" class="social-link" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Shop</h4>
+        <ul class="footer-links">
+          <li><a href="#shop">Nya produkter</a></li>
+          <li><a href="#shop">Alla produkter</a></li>
+          <li><a href="#shop">Hoodies</a></li>
+          <li><a href="#shop">T-shirts</a></li>
+          <li><a href="#shop">Kepsar</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Kundservice</h4>
+        <ul class="footer-links">
+          <li><a href="#">Frakt & Leverans</a></li>
+          <li><a href="#">Returer & Byten</a></li>
+          <li><a href="#">Storleksguide</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Kontakta oss</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-col-title">Om oss</h4>
+        <ul class="footer-links">
+          <li><a href="#story">Vår historia</a></li>
+          <li><a href="#">Hållbarhet</a></li>
+          <li><a href="#">Press</a></li>
+          <li><a href="#">Samarbeten</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Amorex. Alla rättigheter förbehållna.</p>
+      <div class="footer-legal">
+        <a href="#">Integritetspolicy</a>
+        <a href="#">Köpvillkor</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ─── CART SIDEBAR ─────────────────────────────────── -->
+<div class="cart-overlay"></div>
+<aside class="cart-sidebar">
+  <div class="cart-header">
+    <h2 class="cart-title">Kundvagn</h2>
+    <button class="cart-close" data-cart-close aria-label="Stäng">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+  <div class="cart-body">
+    <svg class="cart-empty-icon" width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <path d="M16 10a4 4 0 01-8 0"/>
+    </svg>
+    <p class="cart-empty-text">Din kundvagn är tom</p>
+    <p class="cart-empty-sub">Lägg till produkter för att börja handla</p>
+  </div>
+  <div class="cart-footer">
+    <a href="#shop" class="btn btn-primary" style="width:100%;justify-content:center;" onclick="closeCart()">
+      Börja shoppa
+    </a>
+  </div>
+</aside>
+
+<script src="js/main.js"></script>
+</body>
+</html>
