@@ -127,21 +127,3 @@ document.querySelectorAll('.cap-color-item').forEach(item => {
     this.style.borderColor = 'var(--gold-dark)';
   });
 });
-
-// ─── NEWSLETTER ───────────────────────────────────────
-document.getElementById('nl-form')?.addEventListener('submit', function (e) {
-  e.preventDefault();
-  const input = this.querySelector('.nl-input');
-  const btn   = this.querySelector('.nl-btn');
-  if (!input.value.trim()) return;
-  const orig = btn.textContent;
-  btn.textContent = 'Tack! ✓';
-  btn.style.background = '#2e6b3e';
-  btn.style.borderColor = '#2e6b3e';
-  input.value = '';
-  setTimeout(() => {
-    btn.textContent = orig;
-    btn.style.background = '';
-    btn.style.borderColor = '';
-  }, 3500);
-});
