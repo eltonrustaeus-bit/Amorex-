@@ -83,14 +83,13 @@ def find_product_bbox(arr, x0, y0, x1, y1, bg_color, thresh=BG_DIFF_THRESH):
 
 
 def enhance_image(img):
-    """Apply UnsharpMask + Contrast enhancement."""
-    img = img.filter(ImageFilter.UnsharpMask(radius=1.4, percent=180, threshold=2))
-    img = ImageEnhance.Contrast(img).enhance(1.12)
+    """Light pre-sharpen before upscaling."""
+    img = img.filter(ImageFilter.UnsharpMask(radius=0.6, percent=120, threshold=2))
     return img
 
 
 def place_on_portrait_canvas(img, cw=CANVAS_W, ch=CANVAS_H, bg=CANVAS_BG, padding=PADDING):
-    """Place image on portrait canvas (cw x ch) keeping aspect ratio."""
+    """Upscale crop onto portrait canvas, then apply final sharpening at full resolution."""
     avail_w = cw - 2 * padding
     avail_h = ch - 2 * padding
     w, h = img.size
@@ -98,6 +97,9 @@ def place_on_portrait_canvas(img, cw=CANVAS_W, ch=CANVAS_H, bg=CANVAS_BG, paddin
     new_w = int(w * scale)
     new_h = int(h * scale)
     img_resized = img.resize((new_w, new_h), Image.LANCZOS)
+    # Sharpen at upscaled resolution for crisp results
+    img_resized = img_resized.filter(ImageFilter.UnsharpMask(radius=0.9, percent=220, threshold=2))
+    img_resized = ImageEnhance.Contrast(img_resized).enhance(1.14)
     canvas = Image.new("RGB", (cw, ch), bg)
     x_off = (cw - new_w) // 2
     y_off = (ch - new_h) // 2
