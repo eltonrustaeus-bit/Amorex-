@@ -2,6 +2,7 @@
 """
 Crop 15 product images + hero from Shopify mockup reference image.
 Uses background-color sampling to detect light-colored garments.
+Outputs portrait canvases (600x800) matching the 3:4 CSS aspect-ratio.
 """
 
 import numpy as np
@@ -12,15 +13,16 @@ SRC = "/root/.claude/uploads/128d9962-b381-57fb-a866-f1fcdeb19c59/4884210b-IMG_1
 OUT_DIR = "/home/user/Amorex-/images/"
 os.makedirs(OUT_DIR, exist_ok=True)
 
-CANVAS_SIZE = 600
+CANVAS_W = 600
+CANVAS_H = 800
 CANVAS_BG = (242, 241, 239)
-PADDING = 36
+PADDING = 20
 BG_DIFF_THRESH = 8
 CORNER_PATCH = 8
 
-# Search windows (generous)
+# Search windows — start must be in pure background so corner-sampling works
 SEARCH_Y = {
-    "hoodie": (515, 810),
+    "hoodie": (520, 810),   # hero ends at ~y=515; bg gap at 520-565; hoodies start ~570
     "tshirt": (845, 1100),
     "cap":    (1115, 1340),
 }
@@ -87,17 +89,18 @@ def enhance_image(img):
     return img
 
 
-def place_on_canvas(img, canvas_size=CANVAS_SIZE, bg=CANVAS_BG, padding=PADDING):
-    """Place image on square canvas with background color, keeping aspect ratio."""
-    available = canvas_size - 2 * padding
+def place_on_portrait_canvas(img, cw=CANVAS_W, ch=CANVAS_H, bg=CANVAS_BG, padding=PADDING):
+    """Place image on portrait canvas (cw x ch) keeping aspect ratio."""
+    avail_w = cw - 2 * padding
+    avail_h = ch - 2 * padding
     w, h = img.size
-    scale = min(available / w, available / h)
+    scale = min(avail_w / w, avail_h / h)
     new_w = int(w * scale)
     new_h = int(h * scale)
     img_resized = img.resize((new_w, new_h), Image.LANCZOS)
-    canvas = Image.new("RGB", (canvas_size, canvas_size), bg)
-    x_off = (canvas_size - new_w) // 2
-    y_off = (canvas_size - new_h) // 2
+    canvas = Image.new("RGB", (cw, ch), bg)
+    x_off = (cw - new_w) // 2
+    y_off = (ch - new_h) // 2
     canvas.paste(img_resized, (x_off, y_off))
     return canvas
 
@@ -107,6 +110,7 @@ def main():
     img_w, img_h = src_img.size
     arr = np.array(src_img)
     print(f"Source image: {img_w}x{img_h}px")
+    print(f"Output canvas: {CANVAS_W}x{CANVAS_H}px (portrait 3:4)")
     print("=" * 60)
 
     for cat, color in PRODUCTS:
@@ -152,10 +156,10 @@ def main():
 
         crop = src_img.crop((px0, py0, px1, py1))
         crop = enhance_image(crop)
-        result = place_on_canvas(crop)
+        result = place_on_portrait_canvas(crop)
         out_path = os.path.join(OUT_DIR, f"{name}.png")
         result.save(out_path, "PNG")
-        print(f"  -> saved {out_path} (padded crop: {px1-px0}x{py1-py0}px -> 600x600)")
+        print(f"  -> saved {out_path} ({px1-px0}x{py1-py0}px crop -> {CANVAS_W}x{CANVAS_H})")
 
     print()
     print("=" * 60)
