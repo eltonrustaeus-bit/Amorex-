@@ -912,48 +912,53 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ─── LIGHTBOX ──────────────────────────────────────── */
 .lightbox {
   position: fixed; inset: 0;
-  background: rgba(8,8,8,.94);
+  background: rgba(8,8,8,.95);
   z-index: 5000;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; pointer-events: none;
-  transition: opacity .3s;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
 }
-.lightbox.open { opacity: 1; pointer-events: all; }
+.lightbox.open {
+  display: flex;
+  animation: lb-fadein .22s ease;
+}
+@keyframes lb-fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 .lightbox-img {
-  max-width: min(520px, 90vw);
-  max-height: 86vh;
+  display: block;
+  max-width: min(500px, calc(100vw - 40px));
+  max-height: calc(100dvh - 100px);
+  width: auto; height: auto;
   object-fit: contain;
-  box-shadow: 0 8px 80px rgba(0,0,0,.7);
-  border-radius: 2px;
+  box-shadow: 0 8px 60px rgba(0,0,0,.8);
 }
 .lightbox-close {
   position: absolute;
-  top: 20px; right: 22px;
-  width: 42px; height: 42px;
+  top: 16px; right: 16px;
+  width: 44px; height: 44px;
   display: flex; align-items: center; justify-content: center;
-  color: rgba(255,255,255,.7);
-  font-size: 20px;
+  color: #fff;
+  font-size: 22px;
   cursor: pointer;
-  background: rgba(255,255,255,.1);
-  border: 1px solid rgba(255,255,255,.2);
+  background: rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.25);
   border-radius: 50%;
   line-height: 1;
-  transition: background .2s, color .2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
-.lightbox-close:hover { background: rgba(255,255,255,.22); color: #fff; }
+.lightbox-close:hover { background: rgba(255,255,255,.28); }
 .lightbox-label {
   position: absolute;
-  bottom: 26px; left: 50%;
+  bottom: 20px; left: 50%;
   transform: translateX(-50%);
   font-size: 9px; font-weight: 600;
-  letter-spacing: 3.5px; text-transform: uppercase;
-  color: rgba(255,255,255,.5);
+  letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,.45);
   white-space: nowrap;
-  background: rgba(0,0,0,.3);
-  padding: 6px 16px;
-  border-radius: 20px;
 }
 
 /* ─── PRODUCT IMAGE TAP BUTTON ──────────────────────── */
