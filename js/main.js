@@ -115,13 +115,18 @@ lightbox?.addEventListener('touchend', e => {
   if (e.changedTouches[0].clientY - touchStartY > 60) closeLightbox();
 }, { passive: true });
 
-// Make each variant image wrap clickable → opens lightbox
+// Transparent tap button over every product image → opens lightbox
 document.querySelectorAll('.variant-img-wrap').forEach(wrap => {
-  wrap.addEventListener('click', e => {
+  const img = wrap.querySelector('img');
+  if (!img) return;
+  const btn = document.createElement('button');
+  btn.className = 'img-tap-btn';
+  btn.setAttribute('aria-label', 'Visa ' + img.alt);
+  btn.addEventListener('click', e => {
     e.stopPropagation();
-    const img = wrap.querySelector('img');
-    if (img) openLightbox(img.src, img.alt);
+    openLightbox(img.src, img.alt);
   });
+  wrap.appendChild(btn);
 });
 
 // ─── ANIMATED STAT COUNTERS ───────────────────────────
