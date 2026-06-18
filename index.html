@@ -97,6 +97,18 @@
 <!-- ═══════════ PRODUCTS ═══════════ -->
 <section id="shop" class="products">
 
+  <!-- GALLERY ENTRY -->
+  <div class="gallery-entry reveal">
+    <p class="gallery-entry-label">Kollektionen 2026</p>
+    <button class="gallery-open-btn" id="gallery-open-btn" touch-action="manipulation">
+      Kolla in alla designer
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    </button>
+  </div>
+
   <!-- ── HOODIES ── -->
   <div class="category-block reveal">
     <div class="cat-info">
@@ -492,6 +504,37 @@
 </footer>
 
 
+
+<!-- ═══════════ DESIGN GALLERY ═══════════ -->
+<div class="gallery-modal" id="gallery-modal" role="dialog" aria-modal="true" aria-label="Designgalleri">
+  <div class="gallery-header">
+    <span class="gallery-counter" id="gallery-counter">1 / 15</span>
+    <button class="gallery-close-btn" id="gallery-close-btn" aria-label="Stäng">✕</button>
+  </div>
+
+  <div class="gallery-stage">
+    <button class="gallery-nav" id="gallery-prev" aria-label="Föregående">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img class="gallery-img" id="gallery-img" src="" alt="" draggable="false"/>
+    <button class="gallery-nav" id="gallery-next" aria-label="Nästa">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+    </button>
+  </div>
+
+  <div class="gallery-footer">
+    <p class="gallery-name" id="gallery-name"></p>
+    <p class="gallery-price" id="gallery-price"></p>
+    <a class="gallery-ig-btn" id="gallery-ig-btn" href="https://ig.me/m/amorex.official" target="_blank" rel="noopener">
+      Beställ denna design via Instagram
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+      </svg>
+    </a>
+  </div>
+</div>
 
 <!-- ═══════════ LIGHTBOX ═══════════ -->
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
