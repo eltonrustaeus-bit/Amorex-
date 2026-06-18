@@ -117,8 +117,8 @@ lightbox?.addEventListener('touchend', e => {
 
 // Make each variant image wrap clickable → opens lightbox
 document.querySelectorAll('.variant-img-wrap').forEach(wrap => {
-  wrap.style.cursor = 'zoom-in';
-  wrap.addEventListener('click', () => {
+  wrap.addEventListener('click', e => {
+    e.stopPropagation();
     const img = wrap.querySelector('img');
     if (img) openLightbox(img.src, img.alt);
   });
