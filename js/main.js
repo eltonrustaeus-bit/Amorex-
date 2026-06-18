@@ -108,22 +108,20 @@ lightboxClose?.addEventListener('click', closeLightbox);
 lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-// Inject zoom button into each variant image wrap
+// Swipe down to close on mobile
+let touchStartY = 0;
+lightbox?.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
+lightbox?.addEventListener('touchend', e => {
+  if (e.changedTouches[0].clientY - touchStartY > 60) closeLightbox();
+}, { passive: true });
+
+// Make each variant image wrap clickable → opens lightbox
 document.querySelectorAll('.variant-img-wrap').forEach(wrap => {
-  const btn = document.createElement('button');
-  btn.className = 'img-zoom-btn';
-  btn.setAttribute('aria-label', 'Förstora bild');
-  btn.innerHTML =
-    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">' +
-    '<circle cx="11" cy="11" r="7.5"/><path d="M21 21l-4.5-4.5"/>' +
-    '<line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/>' +
-    '</svg>';
-  btn.addEventListener('click', e => {
-    e.stopPropagation();
+  wrap.style.cursor = 'zoom-in';
+  wrap.addEventListener('click', () => {
     const img = wrap.querySelector('img');
     if (img) openLightbox(img.src, img.alt);
   });
-  wrap.appendChild(btn);
 });
 
 // ─── ANIMATED STAT COUNTERS ───────────────────────────
