@@ -11,9 +11,12 @@
 </head>
 <body>
 
+<!-- SCROLL PROGRESS -->
+<div class="scroll-progress" id="scroll-progress"></div>
+
 <!-- ANNOUNCEMENT -->
 <div class="announce">
-  Fri frakt på alla beställningar över 999 KR &nbsp;·&nbsp; Ny kollektion 2025 ute nu
+  Ny kollektion 2026 &nbsp;·&nbsp; Beställ direkt via Instagram @amorex.official
 </div>
 
 <!-- NAV -->
@@ -68,7 +71,7 @@
 <!-- HERO -->
 <section id="home" class="hero">
   <div class="hero-content">
-    <p class="hero-eyebrow">Kollektion 2025</p>
+    <p class="hero-eyebrow">Kollektion 2026</p>
     <h1 class="hero-title">
       The Amorex<br>
       <em>Collection</em>
@@ -96,19 +99,19 @@
 <!-- MARQUEE -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
-    <div class="marquee-item">Fri frakt över 999 KR<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Ny kollektion 2026<span class="marquee-dot"></span></div>
     <div class="marquee-item">Premium kvalitet<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Kollektion 2025<span class="marquee-dot"></span></div>
     <div class="marquee-item">Tidlös design<span class="marquee-dot"></span></div>
     <div class="marquee-item">Amorex Official<span class="marquee-dot"></span></div>
     <div class="marquee-item">Hoodies · T-shirts · Kepsar<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Beställ via Instagram<span class="marquee-dot"></span></div>
     <!-- duplicate for loop -->
-    <div class="marquee-item">Fri frakt över 999 KR<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Ny kollektion 2026<span class="marquee-dot"></span></div>
     <div class="marquee-item">Premium kvalitet<span class="marquee-dot"></span></div>
-    <div class="marquee-item">Kollektion 2025<span class="marquee-dot"></span></div>
     <div class="marquee-item">Tidlös design<span class="marquee-dot"></span></div>
     <div class="marquee-item">Amorex Official<span class="marquee-dot"></span></div>
     <div class="marquee-item">Hoodies · T-shirts · Kepsar<span class="marquee-dot"></span></div>
+    <div class="marquee-item">Beställ via Instagram<span class="marquee-dot"></span></div>
   </div>
 </div>
 
@@ -346,15 +349,15 @@
     </p>
     <div class="story-stats">
       <div>
-        <span class="stat-num">2025</span>
+        <span class="stat-num" data-count="2026">2026</span>
         <span class="stat-lbl">Grundat</span>
       </div>
       <div>
-        <span class="stat-num">5</span>
+        <span class="stat-num" data-count="5">5</span>
         <span class="stat-lbl">Färgval</span>
       </div>
       <div>
-        <span class="stat-num">3</span>
+        <span class="stat-num" data-count="3">3</span>
         <span class="stat-lbl">Produkter</span>
       </div>
     </div>
@@ -428,7 +431,7 @@
       "Kläder som känns moderna idag, men som fortfarande kommer att se bra ut om flera år."
     </p>
     <div class="manifesto-divider"></div>
-    <p class="manifesto-attr">— Amorex, grundat 2025</p>
+    <p class="manifesto-attr">— Amorex, grundat 2026</p>
   </div>
 </div>
 
@@ -500,7 +503,7 @@
   </div>
 
   <div class="footer-bottom">
-    <p class="footer-copy">© 2025 Amorex. Alla rättigheter förbehållna.</p>
+    <p class="footer-copy">© 2026 Amorex. Alla rättigheter förbehållna.</p>
     <div class="footer-legal">
       <a href="#">Integritetspolicy</a>
       <a href="#">Köpvillkor</a>
@@ -510,6 +513,33 @@
 </footer>
 
 
+
+<!-- ═══════════ LIGHTBOX ═══════════ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Stäng">✕</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt=""/>
+  <span class="lightbox-label" id="lightbox-label"></span>
+</div>
+
+<!-- FLOATING INSTAGRAM -->
+<a class="float-ig" id="float-ig" href="https://ig.me/m/amorex.official" target="_blank" rel="noopener" aria-label="Beställ via Instagram">
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
+    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+  </svg>
+  Beställ nu
+</a>
+
+<!-- BACK TO TOP -->
+<button class="back-to-top" id="back-to-top" aria-label="Tillbaka till toppen">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <path d="M18 15l-6-6-6 6"/>
+  </svg>
+</button>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="js/main.js"></script>
 </body>
