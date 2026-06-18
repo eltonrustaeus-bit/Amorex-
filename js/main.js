@@ -1,146 +1,147 @@
-// ─── NAV SCROLL ──────────────────────────────────────
-const nav = document.querySelector('.nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 40);
-});
+// ─── CART STATE ───────────────────────────────────────
+const cart = [];
+const overlay  = document.getElementById('cart-overlay');
+const drawer   = document.getElementById('cart-drawer');
+const cartBody = document.getElementById('cart-body');
+const badge    = document.querySelector('.cart-badge');
+
+function openCart() {
+  overlay.classList.add('open');
+  drawer.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeCart() {
+  overlay.classList.remove('open');
+  drawer.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('[data-cart-open]').forEach(b => b.addEventListener('click', openCart));
+document.querySelectorAll('[data-cart-close]').forEach(b => b.addEventListener('click', closeCart));
+overlay?.addEventListener('click', closeCart);
+
+function updateCartUI() {
+  const count = cart.length;
+  badge.textContent = count;
+  badge.style.display = count ? 'flex' : 'none';
+
+  if (count === 0) {
+    cartBody.innerHTML = `
+      <svg class="cart-empty-icon" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <path d="M16 10a4 4 0 01-8 0"/>
+      </svg>
+      <p class="cart-empty-msg">Din kundvagn är tom</p>
+      <p class="cart-empty-sub">Lägg till produkter för att börja handla</p>`;
+  } else {
+    cartBody.innerHTML = cart.map((item, i) => `
+      <div style="width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid var(--light-border);gap:12px;">
+        <div>
+          <p style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px;">${item.name}</p>
+          <p style="font-size:11px;color:var(--muted);">1 st · ${item.price}</p>
+        </div>
+        <button onclick="removeFromCart(${i})" style="color:var(--muted);font-size:14px;padding:4px 8px;cursor:pointer;background:none;border:none;transition:color .2s;" onmouseover="this.style.color='var(--ink)'" onmouseout="this.style.color='var(--muted)'">✕</button>
+      </div>`).join('');
+  }
+}
+
+function addToCart(name, price = '549 KR') {
+  const prices = { 'Hoodie': '549 KR', 'Tee': '349 KR', 'Cap': '389 KR', 'T-shirt': '349 KR' };
+  const p = Object.entries(prices).find(([k]) => name.toLowerCase().includes(k.toLowerCase()));
+  cart.push({ name, price: p ? p[1] : price });
+  updateCartUI();
+
+  // Feedback flash
+  const btn = event?.target?.closest('button');
+  if (btn) {
+    const orig = btn.innerHTML;
+    btn.innerHTML = 'Tillagd ✓';
+    btn.style.background = '#2e6b3e';
+    btn.style.borderColor = '#2e6b3e';
+    setTimeout(() => {
+      btn.innerHTML = orig;
+      btn.style.background = '';
+      btn.style.borderColor = '';
+    }, 1800);
+  }
+  openCart();
+}
+
+function removeFromCart(i) {
+  cart.splice(i, 1);
+  updateCartUI();
+}
 
 // ─── MOBILE MENU ─────────────────────────────────────
-const hamburger = document.querySelector('.hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-const mobileMenuClose = document.querySelector('.mobile-menu-close');
+const mobileMenu  = document.querySelector('.mobile-menu');
+const hamburger   = document.querySelector('.hamburger');
+const mobileClose = document.querySelector('.mobile-close');
 
 hamburger?.addEventListener('click', () => {
   mobileMenu.classList.add('open');
   document.body.style.overflow = 'hidden';
 });
-
-mobileMenuClose?.addEventListener('click', closeMenu);
-mobileMenu?.addEventListener('click', (e) => {
-  if (e.target === mobileMenu) closeMenu();
-});
-
-function closeMenu() {
+mobileClose?.addEventListener('click', () => {
   mobileMenu.classList.remove('open');
   document.body.style.overflow = '';
+});
+mobileMenu?.querySelectorAll('a').forEach(a =>
+  a.addEventListener('click', () => {
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  })
+);
+
+// ─── SCROLL REVEAL ────────────────────────────────────
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      io.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+// ─── VARIANT SELECT ───────────────────────────────────
+function selectVariant(card, name) {
+  const row = card.closest('.variants-row');
+  row?.querySelectorAll('.variant-img-wrap').forEach(w => {
+    w.style.borderColor = '';
+  });
+  const wrap = card.querySelector('.variant-img-wrap');
+  if (wrap) {
+    wrap.style.borderColor = 'var(--gold-dark)';
+    wrap.style.borderWidth = '2px';
+  }
 }
 
-mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-
-// ─── CART SIDEBAR ─────────────────────────────────────
-const cartOverlay = document.querySelector('.cart-overlay');
-const cartSidebar = document.querySelector('.cart-sidebar');
-const cartBtns = document.querySelectorAll('[data-cart-open]');
-const cartClose = document.querySelector('[data-cart-close]');
-
-function openCart() {
-  cartOverlay.classList.add('open');
-  cartSidebar.classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
-
-function closeCart() {
-  cartOverlay.classList.remove('open');
-  cartSidebar.classList.remove('open');
-  document.body.style.overflow = '';
-}
-
-cartBtns.forEach(btn => btn.addEventListener('click', openCart));
-cartOverlay?.addEventListener('click', closeCart);
-cartClose?.addEventListener('click', closeCart);
-
-// ─── PRODUCT TABS ─────────────────────────────────────
-const tabs = document.querySelectorAll('.category-tab');
-const allCards = document.querySelectorAll('.product-card');
-
-tabs.forEach(tab => {
-  tab.addEventListener('click', () => {
-    tabs.forEach(t => t.classList.remove('active'));
-    tab.classList.add('active');
-
-    const filter = tab.dataset.filter;
-    allCards.forEach(card => {
-      const show = filter === 'all' || card.dataset.category === filter;
-      card.style.display = show ? 'block' : 'none';
+// ─── CAP COLOR ITEMS - active styling ─────────────────
+document.querySelectorAll('.cap-color-item').forEach(item => {
+  item.addEventListener('click', function () {
+    document.querySelectorAll('.cap-color-item').forEach(i => {
+      i.style.borderColor = '';
     });
+    this.style.borderColor = 'var(--gold-dark)';
   });
 });
 
-// ─── SCROLL REVEAL ────────────────────────────────────
-const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
-);
-
-reveals.forEach(el => revealObserver.observe(el));
-
 // ─── NEWSLETTER ───────────────────────────────────────
-const newsletterForm = document.querySelector('.newsletter-form');
-newsletterForm?.addEventListener('submit', (e) => {
+document.getElementById('nl-form')?.addEventListener('submit', function (e) {
   e.preventDefault();
-  const input = newsletterForm.querySelector('.newsletter-input');
-  const btn = newsletterForm.querySelector('.newsletter-btn');
+  const input = this.querySelector('.nl-input');
+  const btn   = this.querySelector('.nl-btn');
   if (!input.value.trim()) return;
-
   const orig = btn.textContent;
-  btn.textContent = 'Tack!';
-  btn.style.background = '#5a8a5a';
-  btn.style.borderColor = '#5a8a5a';
+  btn.textContent = 'Tack! ✓';
+  btn.style.background = '#2e6b3e';
+  btn.style.borderColor = '#2e6b3e';
   input.value = '';
-
   setTimeout(() => {
     btn.textContent = orig;
     btn.style.background = '';
     btn.style.borderColor = '';
-  }, 3000);
-});
-
-// ─── COLOR DOTS ───────────────────────────────────────
-document.querySelectorAll('.color-dot').forEach(dot => {
-  dot.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const parent = dot.closest('.product-colors');
-    parent.querySelectorAll('.color-dot').forEach(d => d.style.boxShadow = '');
-    dot.style.boxShadow = `0 0 0 2px var(--gold), 0 0 0 4px rgba(201,169,110,0.2)`;
-  });
-});
-
-// ─── ADD TO CART ──────────────────────────────────────
-let cartCount = 0;
-const cartCountEl = document.querySelector('.cart-count');
-
-document.querySelectorAll('.product-add').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    cartCount++;
-    if (cartCountEl) {
-      cartCountEl.textContent = cartCount;
-      cartCountEl.style.display = 'flex';
-    }
-    btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>`;
-    btn.style.background = 'var(--gold)';
-    btn.style.borderColor = 'var(--gold)';
-    btn.style.color = 'var(--black)';
-    setTimeout(() => {
-      btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>`;
-      btn.style.background = '';
-      btn.style.borderColor = '';
-      btn.style.color = '';
-    }, 1500);
-  });
-});
-
-// ─── SMOOTH PRODUCT CARD CLICK ────────────────────────
-document.querySelectorAll('.product-card').forEach(card => {
-  card.addEventListener('click', () => {
-    card.style.transform = 'scale(0.98)';
-    setTimeout(() => card.style.transform = '', 150);
-  });
+  }, 3500);
 });
