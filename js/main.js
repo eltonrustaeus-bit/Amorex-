@@ -106,7 +106,7 @@ lightboxClose?.addEventListener('click', e => { e.stopPropagation(); closeLightb
 lightbox?.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 
-// Transparent tap button over every product image → opens lightbox
+// Transparent tap button over every product image → opens lightbox (lifestyle photo if available)
 document.querySelectorAll('.variant-img-wrap').forEach(wrap => {
   const img = wrap.querySelector('img');
   if (!img) return;
@@ -115,7 +115,8 @@ document.querySelectorAll('.variant-img-wrap').forEach(wrap => {
   btn.setAttribute('aria-label', 'Visa ' + img.alt);
   btn.addEventListener('click', e => {
     e.stopPropagation();
-    openLightbox(img.src, img.alt);
+    const src = img.dataset.lifestyle || img.src;
+    openLightbox(src, img.alt);
   });
   wrap.appendChild(btn);
 });
